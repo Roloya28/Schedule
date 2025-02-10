@@ -16,4 +16,7 @@ public class User extends BaseEntity {
     @Column(nullable = false)
     private String email;
 
+    @Column(nullable = false) // 비밀번호 추가
+    private String password;
+
 }
