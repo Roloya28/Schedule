@@ -1,7 +1,9 @@
 package com.example.schedule.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
+@Getter
 @Entity
 @Table(name = "user")
 public class User extends BaseEntity {
@@ -18,5 +20,11 @@ public class User extends BaseEntity {
 
     @Column(nullable = false) // 비밀번호 추가
     private String password;
+
+    public User(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
 
 }
