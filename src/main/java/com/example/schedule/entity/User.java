@@ -1,11 +1,10 @@
 package com.example.schedule.entity;
 
 import jakarta.persistence.*;
-import lombok.Setter;
 
 @Entity
-@Table(name = "schedule")
-public class Schedule extends BaseEntity {
+@Table(name = "user")
+public class User extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,12 +14,6 @@ public class Schedule extends BaseEntity {
     private String username;
 
     @Column(nullable = false)
-    private String title;
+    private String email;
 
-    @Column(columnDefinition = "longtext")
-    private String contents;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
 }
