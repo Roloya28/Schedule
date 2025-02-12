@@ -20,7 +20,7 @@ public class Schedule extends BaseEntity {
     private String title;
 
     @Column(columnDefinition = "longtext")
-    private String contents;
+    private String content;
 
     @Setter
     @ManyToOne
@@ -28,12 +28,15 @@ public class Schedule extends BaseEntity {
     private User user;
 
     public Schedule() {
-
     }
 
-    public Schedule(String title, String contents) {
+    public Schedule(String title, String content) {
         this.title = title;
-        this.contents = contents;
+        this.content = content;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
 }

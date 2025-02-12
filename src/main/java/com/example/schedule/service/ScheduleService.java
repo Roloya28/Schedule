@@ -18,16 +18,16 @@ public class ScheduleService {
     private final UserRepository userRepository;
     private final ScheduleRepository scheduleRepository;
 
-    public ScheduleResponseDto save(String title, String contents, String username) {
+    public ScheduleResponseDto save(String title, String content, String username) {
 
         User findUser = userRepository.findUserByUsernameOrElseThrow(username);
 
-        Schedule schedule = new Schedule(title, contents);
+        Schedule schedule = new Schedule(title, content);
         schedule.setUser(findUser);
 
         scheduleRepository.save(schedule);
 
-        return new ScheduleResponseDto(schedule.getId(), schedule.getTitle(), schedule.getContents());
+        return new ScheduleResponseDto(schedule.getId(), schedule.getTitle(), schedule.getContent());
     }
 
     public List<ScheduleResponseDto> findAll() {
@@ -43,7 +43,7 @@ public class ScheduleService {
         Schedule findSchedule = scheduleRepository.findByIdOrElseThrow(id);
         User author = findSchedule.getUser();
 
-        return new ScheduleWithEmailResponseDto(findSchedule.getTitle(), findSchedule.getContents(), author.getEmail());
+        return new ScheduleWithEmailResponseDto(findSchedule.getTitle(), findSchedule.getContent(), author.getEmail());
     }
 
     public void delete(Long id) {

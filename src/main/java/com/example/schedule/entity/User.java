@@ -21,10 +21,16 @@ public class User extends BaseEntity {
     @Column(nullable = false) // 비밀번호 추가
     private String password;
 
+    public User() {
+    }
+
     public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
     }
 
+    public void updatePassword(String password) {
+        this.password = password;
+    }
 }

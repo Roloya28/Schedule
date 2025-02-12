@@ -8,15 +8,15 @@ public class ScheduleResponseDto {
 
     private final Long id;
     private final String title;
-    private final String contents;
+    private final String content;
 
-    public ScheduleResponseDto(Long id, String title, String contents) {
+    public ScheduleResponseDto(Long id, String title, String content) {
         this.id = id;
         this.title = title;
-        this.contents = contents;
+        this.content = content;
     }
 
     public static ScheduleResponseDto toDto(Schedule schedule) {
-        return new ScheduleResponseDto(schedule.getId(), schedule.getTitle(), schedule.getContents());
+        return new ScheduleResponseDto(schedule.getId(), schedule.getTitle(), schedule.getContent());
     }
 }
