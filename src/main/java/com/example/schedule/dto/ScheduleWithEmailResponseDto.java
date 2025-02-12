@@ -6,12 +6,12 @@ import lombok.Getter;
 public class ScheduleWithEmailResponseDto {
 
     private final String title;
-    private final String content;
+    private final String contents;
     private final String email;
 
-    public ScheduleWithEmailResponseDto(String title, String content, String email) {
+    public ScheduleWithEmailResponseDto(String title, String contents, String email) {
         this.title = title;
-        this.content = content;
+        this.contents = contents;
         this.email = email;
     }
 }
